@@ -21,3 +21,22 @@ def get_weather_forecast(lat, lon):
         return response.json()
     except requests.RequestException as e:
         return {"error": str(e)}
+
+def get_coordinates(location):
+    """
+    Получение координат (широта и долгота) по названию местоположения.
+    """
+    params = {
+        "q": location,
+        "appid": API_KEY
+    }
+    try:
+        response = requests.get("http://api.openweathermap.org/geo/1.0/direct", params=params)
+        response.raise_for_status()
+        data = response.json()
+        if data:
+            return data[0]["lat"], data[0]["lon"]
+        else:
+            return "error", f"Местоположение '{location}' не найдено."
+    except requests.RequestException as e:
+        return "error", str(e)
