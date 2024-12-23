@@ -6,6 +6,6 @@ def create_weather_graph(data, y_column, title, y_label):
     fig.update_layout(
         xaxis_title="Дата и время",
         yaxis_title=y_label,
-        template="plotly_dark"
+        template="plotly_white"
     )
     return fig
