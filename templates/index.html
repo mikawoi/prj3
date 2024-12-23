@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз погоды</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Введите координаты</h1>
+    <form action="/weather" method="POST" style="text-align: center;">
+        <label>Широта: <input type="text" name="latitude" required></label>
+        <label>Долгота: <input type="text" name="longitude" required></label>
+        <button type="submit">Узнать прогноз</button>
+    </form>
+</body>
+</html>
